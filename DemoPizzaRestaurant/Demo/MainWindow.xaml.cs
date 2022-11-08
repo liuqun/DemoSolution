@@ -13,16 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DemoPizzaRestaurant
+namespace DemoPizzaRestaurant.Demo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(MainWindowViewModel viewModel)
         {
             InitializeComponent();
+            DataContext = viewModel;
+            // 此处已经利用 Microsoft.Extensions.DependencyInjection 依赖注入自动创建了 MainWindowViewModel 实例……
         }
     }
 }
